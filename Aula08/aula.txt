@@ -1,0 +1,38 @@
+Protocolos com portas default configuradas
+	TCP 80 -> HTTP
+	...
+	
+ACL -> permite configurar regras por origem, destino e porta
+
+	#access-list 100 deny ip host 10.0.0.2 host 172.16.1.4
+	#interface gig0/2
+	#ip access-group 100 
+	
+	lembrando que se não especificarmos as regras para os outros hosts, ele por padrão vai bloquear
+	
+	#access-list 100 permit ip any any
+	
+	obs: quanto antes vc bloquear melhor, porque evita processamento desnecessário, mas cuidado para não bloquear hosts errados
+			a ACL extendida ajuda nisso, porque antes ao bloquear no IN você poderia bloquear outras redes
+	
+	
+	DNS -> porta UDP 56
+	
+	Podemos configurar DNS no 172.16.1.4
+	Se o 10.0.0.2 precisar acessar o DNS para abrir algum site pelo domain, não conseguirá, mas dependendo ele acessa via IP
+	
+	Uma forma de resolver é liberar apenas o DNS no 172.16.1.4 a partir do 10.0.0.2
+	
+	#access-list 100 deny tcp host 10.0.0.2 host 172.16.1.4 eq 80
+		eq -> equal = 
+		lt -> less than <
+		gt -> greater than >
+		neq -> not equal <>
+		
+	para apagar a regra anterior e evitar conflitos na precedência da regra:
+	#no access-list 100
+	
+	#access-list 100 deny tcp host 10.0.0.2 host 172.16.1.4 eq 80
+	#access-list 100 permit ip any any
+	
+	
