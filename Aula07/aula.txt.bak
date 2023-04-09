@@ -16,5 +16,5 @@ Firewall
 	#access-list 100 permit ip any any
 	
 	#show run -> ver configurações atuais
-	#show access-list 1 -> ver configurações da lista 1
+	
 	
