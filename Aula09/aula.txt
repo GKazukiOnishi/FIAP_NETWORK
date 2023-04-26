@@ -1,0 +1,8 @@
+Combinação ACLs e VLANs
+
+Obs: Podemos conectar em uma interface da vlan 2 do switch em uma interface do roteador, e conectar outra da vlan 3 também no roteador
+Nisso não precisamos mais do trunk, porém gastamos uma porta do roteador
+
+comando
+switchport trunk allowed all -> já muda para o modo trunk
+
