@@ -59,3 +59,5 @@ Roteamento dinâmico melhora isso
 	Apesar de ter esse processamento todo, já é melhor que o estático
 	Nem sempre o caminho mais curto ou o escolhido será o melhor
 	
+	Rota estática é muito útil em casos em que vão configurar algo ou mexer na rede, aí você faz o roteamento passar tudo pelo mesmo caminho
+		enquanto vc mexe nos outros
