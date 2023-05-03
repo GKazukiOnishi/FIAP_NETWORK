@@ -1,0 +1,61 @@
+Nos slides e no netacademy tem os conteúdos extras
+
+Até hoje estávamos focando em LANs
+Camadas de Rede, Enlace e Física
+
+Qualquer dispositivo que se conecte a internet e que envie dados
+	geladeira, smartwatch, notebook etc.
+	
+	Sempre há um caminho que é contruído entre a origem e o destino
+	Internet são vários caminhos que conectam os celulares entre si
+	
+Segmentação com Roteadores
+	Roteador liga redes diferentes sempre
+	
+Internet são roteadores que se conectam entre si
+
+Rednesp -> Backbone SP, conectando centros de pesquisa em SP
+	Elas cooperam entre si e vão enviando dados para outros centros de pesquisa em outros continentes etc.
+	Uma alternativo seria se conectar à internet de todos nós, Vivo etc
+	Mas quando temos uma grande quantidade de dados, a internet Commodity não é suficiente
+	Elas operam na Best Effort -> melhor esforço para entregar
+		conexão entre SP e EUA, fibra de alta velocidade dedicada para isso
+		isso com outros 2 caminhos redundantes
+
+Configuração de roteamento estático:
+	
+(no roteador)
+enable
+show ip route -> mostra as redes que um roteador conhece
+
+	 200.200.200.0/24 is variably subnetted, 2 subnets, 2 masks conhece a rede 200 200 200 0
+C       200.200.200.0/24 is directly connected, GigabitEthernet0/0
+L       200.200.200.1/32 is directly connected, GigabitEthernet0/0
+     200.200.210.0/24 is variably subnetted, 2 subnets, 2 masks -> conhece a rede 200 200 210 0
+C       200.200.210.0/30 is directly connected, GigabitEthernet0/1
+L       200.200.210.2/32 is directly connected, GigabitEthernet0/1 -> interface conectada nessa rede
+
+ip route 200.200.209.0 255.255.255.0 200.200.210.1 -> para acessar o endereço 200.200.209.0, vai para o endereço 200.200.210.1
+
+nisso vamos configurando de roteador a roteador o caminho que ele vai usar até o 200.200.209.0
+
+do show ip route -> no modo conf ter, executa o show ip route
+
+Obs: Se queremos uma comunicação que vai e volta, ex: ping, precisamos configurar o caminho de volta também
+Obs: Tem como fazer a config em Routing Static na interface do roteador
+
+Se configurarmos dois caminhos estáticos, ele vai tentando pelo primeiro (mas nem todo roteador tem isso)
+
+Roteamento dinâmico melhora isso
+	Ao invés de ir construindo o caminho em cada um, habilitamos um protocolo de roteamento dinâmico
+	De forma que os roteadores vão contando de um para o outro as redes que conhece (saem fofocando)
+	
+	Agora tendo essa informação toda, ele consegue montar caminhos que ele poderia usar para chegar em algum lugar
+	
+	Quem faz isso são os roteadores de grande porto do núcleo da internet
+	
+	Em casa temos uma rota estática até o roteador da operadora, a partir dele se vira
+	
+	Apesar de ter esse processamento todo, já é melhor que o estático
+	Nem sempre o caminho mais curto ou o escolhido será o melhor
+	
