@@ -1,0 +1,30 @@
+Roteamento revisão
+	
+	Internet = Redes que se conectam com outras e outras, até se tornar em algo que conecta o mundo
+	
+	Roteamento -> processo de repassar pacotes de dados por caminhos / rotas até chegar ao seu destino com menor custo
+		Escolher o melhor caminho
+	
+		Estático:
+			Escolher manualmene, forçado, fixo, as rotas estáticas, os caminhos que os pacotes irão pegar
+			Usado na ponta, para conectar seu modem
+			
+			A internet utiliza o dinâmico, para escolher o melhor caminho dinamicamente
+				RIP
+					Usava como métrica o caminho mais curto
+					Para ele: Quantidade de roteadores no caminho, número de saltos que vai precisar dar
+					
+					Muito bom para ensinar na aula
+					Porque na prática não usamos mais
+					
+					Hoje em dia temos outros bem mais avançados
+				
+						OSPF
+						BGP
+						
+					Eles usam outras métricas mais inteligentes do que o caminho mais curto
+						Largura de banda, estabilidade, disponibilidade etc.
+			
+			
+				
+			
