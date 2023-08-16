@@ -1,0 +1,15 @@
+DNS
+	Uma hierarquia
+	Quem não sabe pergunta para outro, que pergunta outro etc.
+	E esse estrutura contém todas essas informações mundiais
+	A raiz do DNS ensina outros, que outros ensinam outros etc.
+	A raiz fica no departamento de defesa dos EUA, já caiu uma vez
+	por isso hoje tem vários backups, 13 estruturas de DNS sincronizadas mundialmente
+	Pentagono, Nasa, China, Europa, Japao etc.
+	
+	Um banco de dados global distribuído, dinâmico, com todas as URLs do mundo
+	
+Caso o servidor de DNS caia, podemos apontar para um DNS público
+	Tem o da operadora
+	da Google 8.8.8.8
+	
