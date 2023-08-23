@@ -67,4 +67,31 @@ Políticas de segurança
 				Porém garante algo, garante a autenticidade da mensagem, garante que foi você que enviou, ninguém mais
 				
 				
+				Então, criptografar com a pública garante confidencialidade
+					   criptografar com a privada garante autenticidade
+					   
+				Como ter os dois?
+					Fazemos esse processo duas vezes para cifrar, uma vez usando a sua privada e outra usando a pública minha, quando chegar lá
+						vai decifrar usando a minha privada e depois a sua pública.
+					
+					Nisso, a primeira camada de cifra garante a autenticidade, por ter usado a própria privada
+					A segunda camada garante confidencialidade disso tudo, usando a pública do destino (só o destino vai enxergar usando a privada dele)
+					
+				Nisso não tem como ocorrer a falsificação da mensagem por usar a pública para cifrar (que todos tem) e dizendo que você é alguém que não é
+				Também não tem como ninguém mais ler essa mensagem, já que só quem tem a privada do destino vai conseguir ver
 				
+				Cartórios digitais
+				Entidades que atuam como essas entidades, certificando coisas utilizando essa ideia
+				Forma de garantir que é você, porque só você conseguiria cifrar aquilo usando a sua chave privada
+				
+				Assinatura digital é isso, eles vão gerar um certificado digital com a sua chave privada e pública, carimbado pelo cartório digital
+				Instalamos essa assinatura no servidor, o servidor vai publicar a chave pública carimbada por um cartório
+				Nisso quem tem essa chave consegue constatar no cartório se pertence ao dono ou não
+				Além disso, tendo a chave privada já tem a confidencialidade garantida
+				
+				Essa entidade intermediadora garante que não é alguém qualquer com outras duas chaves dizendo ser você, a entidade garante
+				Só usamos chaves públicas certificadas pelas entidades
+				
+				Chaves autenticadas por entidades certificadoras
+		
+			HTTPS -> garante que o certificado do site é válido, utilizando todas essas ideias
