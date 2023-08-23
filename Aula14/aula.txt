@@ -1,0 +1,70 @@
+Políticas de segurança
+
+	3 critérios
+		CID
+		
+		Confidencialidade
+			Autenticidade e Autorização
+		
+		Integridade
+		
+		Disponibilidade
+		
+	Técnica mais usual para confidencialidade é o uso de Criptografia
+	Que é algo não nativo da internet
+	Quando foi projetada, em favor da performance, não previa criptografia
+	Tudo que enviamos pela internet naturalmente é aberto
+	
+	Criptografia
+		Ato de codificar uma mensagem para que somente quem tem autorização consiga recuperar a informação
+		
+		Algo que a cada dia tem evoluído
+		
+		Enigma -> Alan Turing na segunda guerra mundial
+		Cifra de César -> Algoritmo criptográfico
+			Ideia de somar caracteres na mensagem para criptografar e subtrair para descriptografar
+			
+			Boa Noite!
+			cpb opjuf
+			
+			Chave 1
+		Maias e Incas também
+		Nasceu junto da escrita
+		
+		Tipos:
+		
+			* Simétrica
+				Dado um texto, temos um chave que de acordo com o algoritmo, irá gerar um texto cifrado
+				A alteração da chave gera um texto cifrado diferente
+				Para recurar a informação é a mesma chave com o algoritmo inverso
+				
+				Problema: Ao interceptar a mensagem não tem como descobrir, mas e se uma das pontas que tem a chave for invadida, dá problema
+				Se envolve mais de uma entidade, não é muito comum por isso
+				
+				Se for algo que só eu preciso, eu criptografo com uma chave, descriptografo com a mesma, porque só eu sei
+				
+				Desafio: Como enviar uma nova chave para o outro lado? É um risco se precisa enviar também
+			* Assimétrica
+				Chaves diferentes para criptografar e decriptar
+				
+				Chaves são geradas em par sempre, um par vinculado
+				
+				No par, tem uma usada para criptografar, a chave privada
+				A outra é para decriptar, com a chave pública
+				
+				Se criptografar com a chave pública, é decriptada com a chave privada
+				
+				A chave pública pode ter várias cópias, os outros podem ter acesso
+				Mas à privada, só eu, ninguém mais
+				
+				Nisso, se alguém quiser enviar mensagem para mim, a mensagem deve ser criptografada com a chave pública
+				Com a chave pública apenas, ninguém consegue decriptar, a não ser quem tem a privada, ou seja, só eu
+				
+				Isso garante a confidencialidade
+				
+				Para enviar algo, posso criptografar com a minha chave privada, porque aí todos que tem a pública poderão ver
+				Mas isso não vai garantir que ninguém mais vai ver, ou seja, não será confidencial
+				Porém garante algo, garante a autenticidade da mensagem, garante que foi você que enviou, ninguém mais
+				
+				
+				
