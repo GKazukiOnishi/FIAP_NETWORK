@@ -95,3 +95,30 @@ Políticas de segurança
 				Chaves autenticadas por entidades certificadoras
 		
 			HTTPS -> garante que o certificado do site é válido, utilizando todas essas ideias
+
+Parte prática
+	Como estabelescer conexão remotamente com roteadores?
+	
+	telnet -> muito comum para conexão remota
+	telnet é um aplicativo nativo da internet com comunicação não criptografada
+	Então essa conexão com o roteador não era segura, você digitava a sua senha e usuário de longe, e trafegava sem criptografia
+	Ele foi abolido por isso
+	
+	SSH -> versão criptografada, security shell
+		estabelesce conexão, mas tem a transação de chaves criptográficas
+		
+no roteador
+
+enable
+conf ter
+hostname lab_902 -> para dar nome e diferenciar ele
+ip domain-name aula06
+crypto key generate rsa -> gerar chave criptográfia com RSA (mesmo do Santander)
+	-> vai pedir para escolher tamanho da chave, quanto maior mais segura, porém mais lenta
+line vty 0 15 -> liberar os 15 canais do roteador
+login local -> para não permitir acesso de ssh a partir dessa máquina com outra
+transport input ssh -> liberar porta ssh
+username admin secret fiap -> user admin com a senha fiap
+
+No computador então podemos acessar o SSH, conectar no IP do roteador, informar usuário e senha
+Nisso já é possível executar comandos remotamente
