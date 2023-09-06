@@ -1,0 +1,43 @@
+Certificado Digital
+	Carimbo que diz que a página é verdadeira
+	
+	Em sites com HTTPS é só clicar no cadeado, em conexão segura, e abrir o ícone do certificado
+	Lá é possível ver quem certificou, o domínio, chave pública e diversos outros campos
+	
+	Entidade Certificadora
+		Digicert -> possui um par de chaves dela (privada e pública)
+			Dados da entidade certificadora são criptografados com a chave privada, então os outros podem ler com a chave pública
+			Isso garante que foi ela que gerou (autenticidade)
+			
+		Quando solicitamos um certificado, pagamos e ele nos dá um par de chaves
+		E também com a chave pública, dados da entidade certificadora e a data, a entidade certificadora criptografa isso tudo junto
+		Isso é entregue ao cliente, que então tem o seu par de chaves e o seu certificado digital (chave pública, dados da entidade, data criptografados)
+		As pessoas que acessarem o site, recebem o certificado digital, e com a chave pública da entidade certificadora consegue decifrar esse certificado digital
+		Nisso o navegador sabe se o site está certificado ou não, ele vai até a entidade pegar a chave pública e garante que está okk
+		Isso é salvo no computador, e ele passa a saber que está seguro
+		
+		Isso tudo garante a autenticidade do site de uma forma mais segura
+		
+		Invasores podem ter HTTPS fake também, gerando estruturas que agem como uma válida
+		E utilizando injeção de DNS em servidores através de brechas em roteadores antigos, a URL é a mesma, e o cadeado também
+		
+VPN - Configuração de VPN
+	VPN -> estabelesce um túnel de comunicação criptografado entre dois equipamentos, tornando o caminho mais seguro
+	
+	Alternativas
+		VPN entre o seu computador e o outro ()
+			individual, só dessa comunicação
+		VPN entre o roteador e o outro roteador (site to site)
+			todas as comunicações entre os roteadores passam pelo túnel
+		VPN entre o seu computador e o outro roteador
+			garante mais segurança no caminho entre o computador até o roteador destino (o caminho local é mais seguro)
+			de forma que, vai sair desse roteador dentro da rede destino, então para o servidor parece que é da mesma rede
+			é o caso do Home Office, parece que você está na rede local do ambiente
+		
+	VPN pode ser usada para garantir só a autenticidade
+	Depende da necessidade
+	Se criptografar fica mais lento
+	
+	
+	
+	
