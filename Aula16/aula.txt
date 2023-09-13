@@ -1,0 +1,49 @@
+Segurança
+
+	Como aprimorar a segurança?
+
+	Firewall
+		Hardware + Software que analisa todo o tráfego buscando assinaturas de ataques para impedir invasões e outras falhas de segurança
+		Bloqueiam tráfego malicioso
+		
+		Faz mais que ACL
+	VPN
+		Túnel de criptografia para impedir falhas no caminho que o dado irá percorrer
+	VLAN
+		Forma de montar uma estrutura que possibilita criar melhores barreiras de segurança internamento em uma LAN
+	ACL
+		Tratamento de acesso
+	DMZ
+	Proxy
+	Criptografia
+	NAT
+		Esconde os endereços privados fora da rede, rede fica oculta
+	Intranet - Conceito que facilita segurança
+	Antivirus
+
+	Todas são tecnologias
+	
+	Confidencialidade Integridade Disponibilidade
+	
+	Tecnologia + Processos
+		Processos - Política de segurança, revisões, rotinas etc.
+			Ex: Alterar a senha a cada 2 meses
+			Política de segurança define uma série de processos
+	
+	Política de segurança:
+		Podemos nos apoiar em normas para obtermos uma orientação
+		
+		ISO 27001
+		
+	Tecnologia + Processos + Pessoas
+		Se as pessoas não estiverem conscientizadas não será suficinete
+		Só de ter as pessoas conscientizadas a segurança por si só melhora muito
+		
+		História da área de psicologia que tinha muito menos problemas de segurnaça que a POLI com várias tecnologias
+		
+		Eles tinham palestras sobre como criar senha, sobre compartilhamento de pendrive, acesso a e-mails etc.
+		A orientação era tanta que os próprios usuários eram a segurança
+	
+	O ponto ideal de segurança é a intersecção dessas três ideias pensando em segurança
+	
+	
