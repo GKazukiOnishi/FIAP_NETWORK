@@ -20,6 +20,10 @@ Segurança
 		Esconde os endereços privados fora da rede, rede fica oculta
 	Intranet - Conceito que facilita segurança
 	Antivirus
+	Honey Pot
+		Equipamento com acesso liberado imitando um equipamento que deveria estar protegido
+		Isso permite estudar ataques e entender padrões antes que um equipamento real seja atacado
+	IPS
 
 	Todas são tecnologias
 	
@@ -46,4 +50,54 @@ Segurança
 	
 	O ponto ideal de segurança é a intersecção dessas três ideias pensando em segurança
 	
+
+Na rede corporativa
+	Configurar anti-virus e firewalls pessoais
+Criar um firewall
+	separando fisicamente ou virtualmente os segmentos da rede para passarem pelo firewall
+	Ele pode detectar assinaturas de ataques
+	Pode bloquear o acesso da internet para a rede corporativa, já que só faz sentido a rede corporativa acessar a internet e não o contrário
+		Pode-se usar NAT e configurações de firewall
+	Pode ser que faça sentido a internet acessar a área de servidores
+		Nisso podemos criar uma DMZ (área em que não há guerra)
+		E ela será isolada da rede com uma política de segurança exclusiva dela
+		Sendo segregado, mesmo que alguém invada um servidor, ele não terá caminho para outros equipamentos que não deveriam ter acesso a partir da internet
+		
+		Nessa área podemos ter um IDS - Intrusion Detection System
+			Ele fica analisando o que passa pela rede, aprendendo com ela
+			E tentando localizar comportamentos de ataque
+			Podem ser adicionados em diversos pontos da rede
+			Ao ser identificado um comportamento estranho, um alerta será gerado ao administrador
 	
+			Podem ser adicionados até antes do firewall, permitindo estudar o que acontece vindo da internet
+			Pode ser adicionado depois também, permitindo identificar coisas que o firewall não barrou
+			Pode ser adicionado em cada segmento que seja pertinente
+			
+		IPS - Intrusion Prevention System
+			Monitorando o ambiente e percebendo um comportamento anômalo, ele consegue reconfigurar o firewall para impedir o ataque
+			Não alerta um humano que deverá tomar a decisão
+			Eles criam automaticamente
+		
+		Esses dois não são imunes, porque pode-se enviar padrões estranhos para enganar eles
+		Pode-se gerar ataques simples apenas, bobos, a partir de um cliente
+		Nisso um cliente pode ser bloqueado totalmente e ficar fora do ar
+		Tem esse problema com casos de falso positivo
+	
+	Honey Pot
+		Colocar um equipamento fora do firewall, em posição para ser atacado
+		Espelhado em um servidor, mas sem dado confidencial
+		Nisso ele pode ser atacado, permitindo aprender com o ataque
+		Brasil tem uma cooperação de várias instituições que compartilham o honey pot, permitindo compartilhar informações
+			Um dos países com maior conhecimento de informação de segurança
+	VPN
+		Permite a partir dos equipamentos, criar um canal seguro de criptografia com o destino
+	
+	
+	Todas essas tecnologias geram muita informação, então é importante armazenar logs também
+	Isso gera uma massa absurda de ataques
+	Sendo importante filtrar essas informações, é um problema essa grande quantidade de dados
+		Esse excesso de informação dificulta saber o que deve considerar ou não, o que vale a pena ou não
+	
+Configuração de VPN
+	
+		
