@@ -99,5 +99,17 @@ Criar um firewall
 		Esse excesso de informação dificulta saber o que deve considerar ou não, o que vale a pena ou não
 	
 Configuração de VPN
+	Canal de comunicação entre dois equipamentos, que permite que a origem aja como se fosse da rede destino.
+	A origem ganha um IP do destino
+	
+	Esses dados ao serem encaminhados, são criptografados e encapsulados, fazendo com que apenas o destino consiga compreender
+	Muitas configurações só permitem que os equipamentos da rede acessem o servidor ou algo do tipo
+	Mas com o HomeOffice, como fazer para acessar?
+	
+	Usamos a VPN para estabelescer uma conexão com o servidor de VPN, permitindo se conectar na rede de destino e fazer
+		"parte dela"
+	
+	Documento .zip com vários cenários e passo a passos de configuração
+	
 	
 		
