@@ -1,0 +1,25 @@
+Obs: Para configuração de VPN é necessária uma insalação de módulo de segurança no roteador
+	Necessário em roteadores que exigem licenças e pacotes extras
+	
+	HomeRouter -> Geralmente só tem 1 porta de WAN/Internet, que é o que aprendemos anteriormente, as portas que cada uma tinha sua rede
+		Neles temos outras portas amarelas que são de Switch, não de roteador
+	
+	NAT - Network Access Translation
+		Converte IP privado em público e vice-versa
+		A - 10.X.X.X
+		B - 172.16.X.X
+			172.31.X.X
+		C - 192.168.0.X
+			192.168.255.X
+	
+	O HomeRouter costuma vir com o NAT configurado, de forma que ao enviar algo para um endereço público usando um privado ele sabe traduzir
+	
+	NAT causa problemas de performance, já que é um processamento por onde tudo precisa passar para acessar a internet
+	A vantagem é o uso do IP privado que traz economia de IPv4
+	Desvantagem é performance
+	
+	Em relação à segurança, é muito bom porque a internet não consegue acessar equipamentos privados, e geralmente não precisa mesmo
+		Só o inverso é necessário
+		
+	Mas como fazer para disponibilizar um equipamento com IP privado publicamente?
+	Na próxima aula vamos configurar isso com DMZs
