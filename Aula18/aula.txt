@@ -1,0 +1,59 @@
+NAT
+	Configurando o NAT, os equipamentos locais conseguem acessar a rede
+	Todavia, não dá para acessar um PC de outra LAN, se lá for outro ip privado
+	
+	Então um servidor em uma rede LAN com ip privado não é acessível fora da rede
+	
+	* Uma forma de acessar é usando VPN, que vai possibilitar se conectar à rede do roteador destino como se fosse outro equipamento de lá
+	
+	Nisso conexões com IPs privados de lá funcionariam
+	
+	Outras formas:
+		* Usar ip público
+		* Configurar NAT para possibilitar enviar requisição do roteador com IP público e ter o ip privado traduzido pelo NAT
+			Podendo inclusive fazer o redirecionamento por portas, para acessar apenas um serviço do servidor
+			Conhecido como PAT
+	
+	Para configurar NAT no roteador de origem (estático):
+		enable
+		conf ter
+		ip nat inside source static 192.168.1.2 200.200.200.2
+		interface gig0/1
+		ip nat inside
+		interface gig0/0
+		ip nat outside
+	
+	Para configurar NAT no roteador de destino (com uma acl):
+		enable
+		conf ter
+		interface gig0/0
+		ip nat outside
+		interface gig0/1
+		ip nat inside
+	
+		access-list 1 permit 10.0.0.0 0.0.0.255
+		ip nat inside source list 1 interface gig0/0 overload -> todos ips 10.0.0.0 vão usar o endereço público do gig0/0
+		
+		ip nat inside source static tcp 10.0.0.2 80 100.1.1.1 80 -> tudo que chegar na 100.1.1.1 na porta tcp 80, o NAT vai encaminhar par 10.0.0.2 na porta 80
+		
+	VPN -> tudo conectado vai acessar tudo
+	NAT -> dá para ter um controle melhor de quem vai acessar o que
+		Problema disso tudo é que acaba abrindo acesso ao servidor para qualquer um da internet
+		E a partir do servidor, todos os outros equipamentos estão vulneráveis
+		
+		Pode virar uma falha de segurança em sistemas mal configurados
+		
+		Como se proteger?
+			Podemos deixar o servidor em uma rede isolada
+			Seja fisicamente, ou VLAN isolada
+			Para que qualquer comunicação do roteador com os demais equipamentos precise passar pelo roteador, em que teremos firewall
+			
+			Isso se chama DMZ
+			
+			Configurando adequadamente o firewall e usando VLAN ou porta separada, temos uma DMZ que limita o acesso do servidor aos demais equipamentos
+			
+			Nisso temos o mesmo risco que um roteador configurado com firewall
+			Nada é 100%, mas é algo bem melhor
+			
+	
+		
