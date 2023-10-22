@@ -1,0 +1,173 @@
+Gerenciamento de redes
+	Disponibilização, integração e coordenação de elementos de hardware, software e humanos, para monitorar, testar, consultar, configurar
+		analisar, avaliar e controlar os recursos da rede, e de elementos, para satisfazer exigências operacionais, de desempenho e de qualidade
+		de serviço em tempo real a um custo razoável
+	
+	Conjunto de mecanismos operacionais e administrativos para para contorlar os recursos da rede, mantendo operacional, facilitando escalabilidade,
+		gerenciando recursos, controlando acesso.
+	
+	Três etapas:
+		* Coleta de dados: em geral é automático, consiste na monitoração dos recursos gerenciados
+		* Diagnóstico: tratamento e análise dos dados coletados. Equipamento executa uma série de procedimentos com o inuito de
+			determinar a causa do problema encontrado
+		* Ação ou controle: encontrado o problema, cabe uma ação, ou controle, sobre o recurso caso o evento não tenha sido passageiro
+		
+	Objetivos:
+		* Monitorar
+		* Manter
+		* Controlar
+		* Facilitar
+		* Gerenciar
+		...
+		por isso é um conjunto de atividades para oferecer serviços de rede satisfatórios ao usuário, seja qual for o contexto ou requisito
+		
+		Falhas em redes podem causar impactos muito negativos nos negócios, por isso são necessários soluções de gerenciamento para evitar
+			isso
+		
+		Pirâmide funcional dos negócios
+			Gerenciamento de Negócios
+			Gerenciamento de Serviços
+			Gerenciamento de Rede
+			Gerenciamento de Elemento --> os dois últimos são focados na rede, dois primeiros nos serviços ao cliente
+			
+	Áreas Funcionais de Gerenciamento
+		FCAPS - Modelo OSI de Gerenciamento
+			Fault, Configuration, Account, Performance, Security
+			Falhas, Configuração, Contabilidade, Desempenho, Segurança
+		
+			Gerenciamento dessas 5 áreas
+			
+			Gerenciamento de Falhas
+				Detecção, isolamento e resolução de situações de anomalidades na rede
+				Conceito:
+					Geralmente indicada por operação incorreta ou número excessivo de erros.
+					Erros é diferente de uma falha, porque erros podem ser causados por motivos diferentes do funcionamento físico de um dispositivo
+				Envolve as seguintes tarefas:
+					Gerenciar limites, eventos
+					Correlacionar causa e origem de problemas
+					Reação rápida ou automática
+				Benefícios:
+					Identifica saúde dos elementos
+					Facilita acompanhar e isolar problemas
+					Oferece dados para análises
+					Mantém um histórico do comportamento comum
+					Minima tempo de recuperação da rede
+					Apoio na identificação da origem dos problemas
+					Retrato da disponibilidade dos dispositivos da rede
+			Gerenciamento de Contabilidade
+				Registro de controle de acesso de usuários e dispositivos aos recursos da rede
+				Controle de quotas de utilização
+				Tarifação (útil para provedores de serviços)
+				Alocação de acesso privilegiado a recursos
+				
+				Envolve as tarefas:
+					gestão de contas de usuários
+					autorização no uso de recursos
+					identificação dos custos de usuários
+					tarifação
+					faturamento
+				Benefícios
+					auxilia em análises de desempenho verificando usuários com acessos privilegiados sobrecarregando a rede
+					Ajuda em planejamentos de expansões para a rede com base no número de usuários e tráfegos
+			Gerenciamento de Configuração
+				Descrever o sistema baseado na localização dos recursos
+				Processo de configuração dos dispositivos
+			
+				Envolve as tarefas:
+					Identificar elementos funcionais da rede
+					Construir mapas de topologia
+					Inventário de hardware e software
+					Contrução de bases de dados de configuração
+					Distribuição eletrônica de software
+					Gestão de alteração de configuração de dispositivos
+					ativação de filtros
+					definição de valores de limiar
+				Benefícios:
+					Esclarecer função de cada ferramente
+					Auxilia na identificação de problemas (alterando configs indevidas)
+					Agiliza identificação de dispositivos da rede
+					facilita acompanhamento de processos de mudança de configuração HW ou SQ
+					Permite ter retrato da rede em tempo real
+					Acelera a replicação em larga escala
+			Gerenciamento de desempenho
+				Quantificar, medir, analisar, controlar o desempneho dos diferentes componentes da rede
+				Gerenciamento de qualidade de serviços (QoS)
+				Cumprimento de Contratos (SLAs)
+					Assegurar que uma rede opera de forma satisfatório perante objetivos de desempenho
+				
+				Tarefas associadas:
+					Estabelecer métricas e parâmetros de QoS
+					Monitoração de recursos
+					Realização de medidas e avaliação de tendências
+					Gerência de disponibilidade
+					Manutenção e Análise de logs com históricos de estado do sisstema
+					Processamento e compilação de relatórios de desemepnho
+					Planejmaneot do desempenho e da capacidade do sistema
+				Benefícios
+					Proporcionar comodida na sustenção dos sistemas implantados
+					Oferecer dados para o desenvolvimento de análise do perfil do tráfego
+					Construir baseline do comportamento do tráfego com foco nas aplicações
+					Implementar novo conceito associado ao gerenciamento fim a fim
+					Proporcionar informações para planejamento de capacidade
+					Oferecer dados para alimentar a manutenção da política de QoS
+			Gerenciamento de Segurança
+				Gestão de segurança da rede
+					Monitar acesso à rede
+					Monitorar recursos da rede
+				Tarefas:
+					Monitamento e detecção de violações de segurança
+					Definição de políticas de segurança
+					Verificação de identidade (autenticação)
+					Controle de acessos
+					Garantia de confidencialidade (criptografia)
+					Integridade dos dados
+					Relatórios de estado de segurança e de violações de segurança
+	
+	Padronização
+		Tem o OSI, que veio da ISO, mas é complexo demais
+		Gerenciamento Internet, da IETF, modelo alternativo
+			como a OSI era muito complexa e não se concretizava, esse acabou virando o padrão na realidade
+		Tem outros, mas esses dois são os principais
+		
+	Por isso vamos ver o Gerenciamento Internet
+		SNMP - Simple Network Management Protocol
+			é a alternativa ao modelo de gerenciamento OSI (CMIP/CMOT)
+		
+		É o padrão usado até hoje
+		
+		Arquitetura:
+			Estação de gerenciamento (gerente)
+				Interface de gerenciamento, fazendo requisições de informações de monitoramento e controle aos elementos
+				Traduzindo as informações para os operadores
+			Agente de Gerenciamento (Agente)
+				Processo associado ao elemento de rede gerenciável. Tem duas funções básicas:
+					responder a requisições do gerente e notifica-lo sobre ocorrências pré-definidas
+			Base de informações de gerenciamento (MIB)
+				Base de dados com estrutura em arvore composta de objetos classificados logicamente. Os objetos representam o estado
+					dos recursos gerenciaveis dos elementos da rede. O gerenciamento ocorre através da leitura e escrita desses objetos
+			Protocolos de Gerenciamento (SNMP)
+				UDP, portas 161 e 162
+				
+			Resumindo, temos um pc de gerente, de onde o administrador de rede consegue retirar relatórios, gráficos e alarmes
+			O gerente consegue fazer requisições ou receber respostas de agentes, que por sua vez interagem com os elementos gerenciados
+			Cada elemento gerenciado apresenta um MIB contendo informações do estado do recursos, ficando junto do agente
+			
+		Tiveram versões do SNMP, que foi evoluindo até hoje, contendo medidas de segurança etc.
+		
+		SMI - Structure of Managemente Information
+			Contém regras para descrição de informação de gerenciamento de redes, descrevendo tipos de dados e como representar e identificar eles
+			Metas: Simplicidade e Extensibilidade
+			Descreve a localização dos dados dentro da estrutura de informação, descreve a forma de interpretação e representação dos dados
+			Ex: Integer, Octect String, Sequence, Sequence of
+		
+			Essas informações vão formando uma árvore de nós conectados
+			Cada nó agrupando um conjunto de objetos relacionados e descrevendo info mantida nos agentes
+			O protocolo em si manipula um objeto por vez
+			Os objetos podem ser:
+				Simples (escalares)
+				Tabelas (formadas por vconjunto de objetos escalares)
+				
+		MIB - Managemente Information Base
+			Banco de dados com os objetos gerenciados
+			Esses objetos refletem o estado atual da rede
+			Objetos gerenciados que são especificados através de OBJECT-TYPE(SMI) e agrupados em módulos MIB
